@@ -1,3 +1,7 @@
+NOTICE:
+
+This branch adds some functional programming plugins, such as syntax highlight and script runner, which may not be needed in my daily work.
+
 My personal Vim configurations and some plugins which I used in my daily job.
 
 I put Vim related settings in `plugin/settings/Settings.vim`, and isolate other plugins' settings in `plugin/settings` directory.

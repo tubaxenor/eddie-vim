@@ -118,3 +118,6 @@
 [submodule "bundle/snipmate"]
   path = bundle/snipmate
   url = git://github.com/kaochenlong/snipmate.vim.git
+[submodule "bundle/vim-ocaml"]
+	path = bundle/vim-ocaml
+	url = git://github.com/jrk/vim-ocaml.git

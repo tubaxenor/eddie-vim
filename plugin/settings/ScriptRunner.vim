@@ -53,3 +53,10 @@ if executable("perl")
 else
   autocmd BufRead,BufNewFile *.pl map <F5> :echo "you need to install Perl first!"<CR>
 end
+
+" OCaml
+if executable("ocaml")
+  autocmd BufRead,BufNewFile *.ml map <F5> :% w !ocaml %<CR>
+else
+  autocmd BufRead,BufNewFile *.ml map <F5> :echo "you need to install OCaml first!"<CR>
+endif
