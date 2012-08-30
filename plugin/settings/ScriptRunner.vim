@@ -57,6 +57,7 @@ end
 " OCaml
 if executable("ocaml")
   autocmd BufRead,BufNewFile *.ml map <F5> :% w !ocaml %<CR>
+  autocmd BufRead,BufNewFile *.ml map <F6> :% w !ocaml<CR>
 else
   autocmd BufRead,BufNewFile *.ml map <F5> :echo "you need to install OCaml first!"<CR>
 endif
