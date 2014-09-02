@@ -5,7 +5,7 @@ if exists("syntax_on")
   syntax reset
 endif
 
-let g:colors_name = "Rails Envy"
+let g:colors_name = "rails_envy"
 
 hi Cursor ctermfg=NONE ctermbg=231 cterm=NONE guifg=NONE guibg=#f8f8f0 gui=NONE
 hi Visual ctermfg=NONE ctermbg=59 cterm=NONE guifg=NONE guibg=#49483e gui=NONE

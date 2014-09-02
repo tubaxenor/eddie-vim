@@ -1,4 +1,3 @@
-call pathogen#runtime_append_all_bundles()
 call pathogen#infect()
 call pathogen#helptags()
 
@@ -18,7 +17,7 @@ set showmode
 set nobomb
 set nostartofline
 set laststatus=2
-set clipboard+=unnamed
+set clipboard=unnamed
 
 filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
@@ -106,10 +105,10 @@ let g:EasyMotion_leader_key = '<Leader>'
 map 0 ^
 
 " force myself to not to use the error keys
-map <up> <nop>
-map <down> <nop>
-map <left> <nop>
-map <right> <nop>
+"map <up> <nop>
+"map <down> <nop>
+"map <left> <nop>
+"map <right> <nop>
 
 " fuzzyfinder
 "map <silent> <c-\>f :FufCoverageFile<cr>
@@ -133,7 +132,7 @@ autocmd BufRead,BufNewFile *.py map <c-CR> :% w !python<CR>
 let g:Powerline_symbols = 'fancy'
 
 " QuickFix Window
-command -bang -nargs=? QFix call QFixToggle(<bang>0)
+"command -bang -nargs=? QFix call QFixToggle(<bang>0)
 function! QFixToggle(forced)
 if exists("g:qfix_win") && a:forced == 0
   cclose
@@ -146,6 +145,7 @@ endfunction
 nnoremap <leader>q :QFix<CR>
 
 " Ctags
+let Tlist_Ctags_Cmd = '/usr/local/bin/ctags'
 set tags+=./tags;/
 set tags+=gems.tags
 autocmd FileType ruby let &l:tags = pathogen#legacyjoin(pathogen#uniq(pathogen#split(&tags) + map(split($GEM_PATH,':'),'v:val."/gems/*/tags"')))
@@ -167,5 +167,30 @@ nnoremap <silent> <leader>gl :Glog<CR>
 nnoremap <silent> <leader>gp :Git push<CR>
 
 " stupid shift key fixes
-cmap E e
-cmap Tabe tabe
+" cmap E e
+" cmap Tabe tabe
+
+" mose patches -------------------------------------------------------------------------------
+iab Yalpha abcdefghijklmnopqrstuvwxyz
+iab YALPHA ABCDEFGHIJKLMNOPQRSTUVWXYZ
+iab Ydigit 1234567890
+iab Yruler 1234567890123456789012345678901234567890123456789012345678901234567890123456789012345678901234567890
+iab  Yell  [...]
+vmap ,ell c[...]<ESC>
+iab shoudl    should
+iab teh       the
+iab Ydate <C-R>=strftime("%y/%m/%d")<CR>
+iab Ytime <C-R>=strftime("%H:%M")<CR>
+iab YDT   <C-R>=strftime("%d %m %y %T")<CR>
+iab YDATE <C-R>=strftime("%a %b %d %T %Z %Y")<CR>
+iab YTH   <C-R>=strftime("%d/%m/%Y:%H:%M ¤ moz ¤ ")<CR>
+
+map <F8> :set nonumber<C-M>
+map <F7> :set number<C-M>
+set pastetoggle=<F9>
+
+let mapleader=","
+set list listchars=trail:¶
+let g:yankring_enabled = 0
+" mouse-----------------------
+" set mouse=a
